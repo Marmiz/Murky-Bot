@@ -1,5 +1,5 @@
 /*
-  A ping pong bot, whenever you send "ping", it replies "pong".
+  Murky bot will show in chat like a true murloc.
 */
 
 // import the discord.js module
@@ -19,13 +19,11 @@ bot.on('ready', () => {
 
 // create an event listener for messages
 bot.on('message', message => {
-  // if the message is "ping",
+  // if mentioned,
   if (message.isMentioned(bot.user)){
     message.channel.sendMessage('Mmrrlg :bubble:');
   }
 });
-
-// message.isMentioned(bot.user)
 
 // log our bot in
 bot.login(token);
