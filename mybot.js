@@ -18,11 +18,28 @@ bot.on('ready', () => {
   console.log('I am ready!');
 });
 
+
 // create an event listener for messages
 bot.on('message', message => {
-  // if mentioned,
+  // create a prefix for control
+  let prefix = '!';
+
+  // to avoid botception
+  if(message.author.bot) return;
+
+  // if mentioned
   if (message.isMentioned(bot.user)){
-    message.channel.sendMessage('Mmrrlg :bubble:');
+    var emoji = bot.emojis.get('230434417414373376').toString();
+    message.channel.sendMessage('Mmrrlg '+emoji);
+  }
+
+  // no prefix
+  if(!message.content.startsWith(prefix)) return;
+
+  // taunt like a boss
+  if(message.content.startsWith(prefix + 'taunt')){
+    var emoji = bot.emojis.get('232799774577786881').toString();
+    message.channel.sendMessage('Your mother was a murloc ' +emoji);
   }
 });
 
