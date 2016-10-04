@@ -5,6 +5,10 @@
 // import the discord.js module
 const Discord = require('discord.js');
 
+// import express modules
+var express = require('express');
+var app = express();
+
 // create an instance of a Discord Client, and call it bot
 const bot = new Discord.Client();
 
@@ -27,3 +31,11 @@ bot.on('message', message => {
 
 // log our bot in
 bot.login(token);
+
+// heroku deployment
+// set port
+app.set('port', (process.env.PORT || 8080));
+
+app.listen(app.get('port'), function () {
+  console.log(`Server listening on port ${app.get('port')}`);
+});
