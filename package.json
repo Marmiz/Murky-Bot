@@ -4,7 +4,8 @@
   "description": "A small bot for Discord",
   "main": "mybot.js",
   "scripts": {
-    "test": "nodemon mybot.js"
+    "test": "nodemon mybot.js",
+    "start": "node mybot.js"
   },
   "keywords": [
     "discord",
