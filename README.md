@@ -10,7 +10,7 @@ The usage is pretty simple, when mentioned in a comment the bot will reply like 
 ![chat example](http://i.imgur.com/NzhpAHK.png)
 
 #### App deployment
-Soon<sup>tm</sup> on Heroku.
+Soon<sup>*tm*</sup> on Heroku.
 
 ---
 Made with :heart:
