@@ -30,7 +30,7 @@ bot.on('message', message => {
 });
 
 // log our bot in
-// bot.login(token);
+bot.login(token);
 
 // heroku deployment
 // set port
