@@ -51,7 +51,11 @@ bot.on('message', message => {
 // log our bot in
 bot.login(token);
 
-app.set('port', (process.env.PORT || 5000))
+app.set('port', (process.env.PORT || 5000));
+
+app.get('/', function(request, response) {
+  response.send('Hello World!')
+})
 
 app.listen(app.get('port'), function() {
   console.log(`Server listening on port ${app.get('port')}`);
