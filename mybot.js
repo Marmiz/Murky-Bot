@@ -2,6 +2,11 @@
   Murky bot will show in chat like a true murloc.
 */
 
+// app config
+require('dotenv').config();
+var express = require('express')
+var app = express()
+
 // import the discord.js module
 const Discord = require('discord.js');
 
@@ -45,3 +50,9 @@ bot.on('message', message => {
 
 // log our bot in
 bot.login(token);
+
+app.set('port', (process.env.PORT || 5000))
+
+app.listen(app.get('port'), function() {
+  console.log(`Server listening on port ${app.get('port')}`);
+})
