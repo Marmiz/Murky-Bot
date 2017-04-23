@@ -7,6 +7,8 @@ require('dotenv').config();
 var express = require('express')
 var app = express()
 
+var axios = require('axios');
+
 // import the discord.js module
 const Discord = require('discord.js');
 
@@ -55,7 +57,11 @@ app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function(request, response) {
   response.send('Hello World!')
-})
+});
+
+setInterval(function() {
+    axios.get("https://murky-bot.herokuapp.com/");
+}, 18000000); // every 30 minutes wake up the bot if idle.
 
 app.listen(app.get('port'), function() {
   console.log(`Server listening on port ${app.get('port')}`);
