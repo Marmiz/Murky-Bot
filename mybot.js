@@ -34,6 +34,24 @@ bot.on('message', message => {
   // to avoid botception
   if(message.author.bot) return;
 
+  // display help
+  if (message.content.startsWith(prefix + 'help')){
+    let instructions = [
+      '```\n',
+      'always start with a "!"\n',
+      '- !help will display the available commands\n',
+      '- !taunt and tag a user to spice up the conversation\n',
+      '- !salt for the moments of extra flavors\n',
+      '- or mention me to hear my beautfoul voice (and know I\'m alive and well)\n',
+      '```'
+    ];
+    var s = ''
+    for (var i = 0; i < instructions.length; i++){
+      s = s+instructions[i];
+    }
+    message.channel.sendMessage(s);
+  }
+
   // if mentioned
   if (message.isMentioned(bot.user)){
     var emoji = bot.emojis.get('230434417414373376').toString();
@@ -45,8 +63,20 @@ bot.on('message', message => {
 
   // taunt like a boss
   if(message.content.startsWith(prefix + 'taunt')){
-    var emoji = bot.emojis.get('232799774577786881').toString();
-    message.channel.sendMessage('Your mother was a murloc ' +emoji);
+    let str = message.content;
+    if (str.indexOf('@') > -1) {
+      let split = str.split(' ');
+      var taunt = split[1];
+      message.channel.sendMessage('Your mother was a murloc ' +taunt);
+    }else{
+      var emoji = bot.emojis.get('232799774577786881').toString();
+      message.channel.sendMessage('Your mother was a murloc ' +emoji);
+    }
+  };
+
+  if(message.content.startsWith(prefix + 'salt')){
+    let salt = 'http://i.imgur.com/lcGtFIJ.jpg'
+    message.channel.sendMessage(salt);
   }
 });
 
