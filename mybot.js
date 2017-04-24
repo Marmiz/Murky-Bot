@@ -91,7 +91,7 @@ app.get('/', function(request, response) {
 
 setInterval(function() {
     axios.get("https://murky-bot.herokuapp.com/");
-}, 18000000); // every 30 minutes wake up the bot if idle.
+}, 300000); // every 5 minutes wake up the bot if idle.
 
 app.listen(app.get('port'), function() {
   console.log(`Server listening on port ${app.get('port')}`);
