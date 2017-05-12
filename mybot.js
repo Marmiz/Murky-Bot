@@ -83,7 +83,7 @@ bot.on('message', message => {
   if(message.content.startsWith(prefix + 'everyone')){
     let gif = 'https://giphy.com/gifs/blizzard-hearthstone-grim-patron-U11aA8dpNnLIA';
     let author = message.author;
-    messagge.channel.sendMessage('@everyone get in here! ' + author + 'wants to play!\n' + gif)
+    message.channel.sendMessage('@everyone get in here! ' + author + 'wants to play!\n' + gif)
   }
 });
 
