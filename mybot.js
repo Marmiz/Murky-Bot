@@ -42,6 +42,7 @@ bot.on('message', message => {
       '- !help will display the available commands\n',
       '- !taunt and tag a user to spice up the conversation\n',
       '- !salt for the moments of extra flavors\n',
+      '- !everyone to invite people to play\n',
       '- or mention me to hear my beautfoul voice (and know I\'m alive and well)\n',
       '```'
     ];
@@ -77,6 +78,12 @@ bot.on('message', message => {
   if(message.content.startsWith(prefix + 'salt')){
     let salt = 'http://i.imgur.com/lcGtFIJ.jpg'
     message.channel.sendMessage(salt);
+  }
+
+  if(message.content.startsWith(prefix + 'everyone')){
+    let gif = 'https://giphy.com/gifs/blizzard-hearthstone-grim-patron-U11aA8dpNnLIA';
+    let author = message.author;
+    messagge.channel.sendMessage('@everyone get in here! ' + author + 'wants to play!\n' + gif)
   }
 });
 
